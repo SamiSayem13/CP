@@ -5,49 +5,25 @@ using namespace std;
 void solve()
 { 
   string s;cin>>s;
-  string s1;
+  string s1="hello";
   int n=s.size();
-  int h=0;
-  int e=0;
-  int l1=0;
-  int l2=0;
-  int o=0;
+  int x=0;
+  int cnt=0;
+
 
   for(int i=0;i<n;i++)
   {
-   if(s[i]=='h'||s[i]=='e'||s[i]=='l'||s[i]=='l'||s[i]=='o')
-   {
-         if(s[i]=='h'&&h==0) 
-         {
-            s1+=s[i];
-            h=1;
-         }
-         else if(s[i]=='e'&&h==1&&e==0) 
-         {
-            s1+=s[i];
-            e=1;
-         }
-         else  if(s[i]=='l'&&h==1&&e==1&&l1==0) 
-         {
-            s1+=s[i];
-            l1=1;
-         }
-         else if(s[i]=='l'&&h==1&&e==1&&l1==1&&l2==0) 
-         {
-            s1+=s[i];
-            l2=1;
-         }
-         else if(s[i]=='o'&&h==1&&e==1&&l1==1&&l2==1&&o==0) 
-         {
-            s1+=s[i];
-            o=1;
-         }
-   }
+     if(s[i]==s1[x])
+     {
+      cnt++;
+      x++;
+     }
   }
-   cout << h << " " << e << " " << l1 << " " << l2 << " " << o << "\n";
 
-  if(h&&e&&l1&&l2&&o) cout<<"YES"<<endl;
+  if(cnt==5) cout<<"YES"<<endl;
   else cout<<"NO"<<endl;
+ 
+
        
 }
  
