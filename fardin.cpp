@@ -19,6 +19,9 @@ int main()
         }
         for(int i=0;i<v.size();i++)
         {
+        	for(auto it:v) cout<<it<<" ";
+        		cout<<endl;
+        	break;
             while(v[i]!=0)
             {
                 c++;
@@ -35,14 +38,7 @@ int main()
             }
             c=0;count=0;
         }
-        if(check==1)
-        {
-            cout<<"YES";
-        }
-        else
-        {
-            cout<<"NO";
-        }
+
     }
     return 0;
 }
