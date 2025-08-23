@@ -1,23 +1,21 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+#define int long long
 using namespace std;
+void solve()
+{
+  cout<<"Hello World"
+}
 
-int main() {
-    int n = 6;
-    vector<int> divs;
+int32_t main()
+{
+     ios_base::sync_with_stdio(0);
+     cin.tie(0);
+     int t;cin>>t;
+     while(t--)
+     {
+        solve();
+     }
 
-    for (int i = 1; i * i <= n; i++) {
-        if (n % i == 0) {
-            divs.push_back(i);
-            if (i != n / i) {   // avoid duplicate when i*i == n
-                divs.push_back(n / i);
-            }
-        }
-    }
 
-    sort(divs.begin(), divs.end());
-
-    for (int d : divs) {
-        cout << d << " ";
-    }
     return 0;
 }

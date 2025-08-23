@@ -1,23 +1,35 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+#define int long long
 using namespace std;
-
-int main() {
-    int n = 6;
-    vector<int> divs;
-
-    for (int i = 1; i * i <= n; i++) {
-        if (n % i == 0) {
-            divs.push_back(i);
-            if (i != n / i) {   // avoid duplicate when i*i == n
-                divs.push_back(n / i);
-            }
-        }
+void solve()
+{
+  int a,b;cin>>a>>b;
+  string s1,s2;cin>>s1>>s2;
+  
+  if(s1==s2) cout<<0<<endl;
+  else
+  {
+    int n=s1.size();
+    while(n<=25)
+    {
+        s1+=s1;
     }
+    cout<<s1<<endl;
+    cout<<s2<<endl;
+  }
+  
+}
 
-    sort(divs.begin(), divs.end());
+int32_t main()
+{
+     ios_base::sync_with_stdio(0);
+     cin.tie(0);
+     int t;cin>>t;
+     while(t--)
+     {
+        solve();
+     }
 
-    for (int d : divs) {
-        cout << d << " ";
-    }
+
     return 0;
 }
