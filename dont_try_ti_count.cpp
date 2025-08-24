@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 #define int long long
-#define Not_Exist string::npos //x.find(y)
+#define Not_Exist string::npos //x.find(y) find y inside x
 using namespace std;
 void solve()
 {
