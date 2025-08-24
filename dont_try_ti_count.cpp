@@ -1,23 +1,30 @@
 #include<bits/stdc++.h>
 #define int long long
+#define Not_Exist string::npos //x.find(y)
 using namespace std;
 void solve()
 {
   int a,b;cin>>a>>b;
   string s1,s2;cin>>s1>>s2;
+  int loop=0;
   
-  if(s1==s2) cout<<0<<endl;
-  else
-  {
-    int n=s1.size();
-    while(n<=25)
+  if(s1==s2) 
     {
+        cout<<0<<endl;
+        return;
+    }
+
+    
+    for(int k=0;k<6;k++)
+    {
+       if(s1.find(s2)!=Not_Exist)
+       {
+        cout<<k<<endl;
+        return;
+       }
         s1+=s1;
     }
-    cout<<s1<<endl;
-    cout<<s2<<endl;
-  }
-  
+    cout<<-1<<endl; 
 }
 
 int32_t main()
