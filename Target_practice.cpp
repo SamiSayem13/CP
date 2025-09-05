@@ -18,24 +18,15 @@ void solve()
     int x,y;
     x=1;
     y=10;
-    int f=1;
-    int sum1=0,sum2=0,sum3=0,sum4=0,sum5=0;
-    
+    int f=1;   
 for(int k=1;k<=5;k++)
 {
 
   for(int i=x;i<=y;i++)
   { 
-    for(int j=x;j<=y;j++)
-    {
-            if(i==x||i==y||j==x||j==y) 
-                {
-                    if(arr[i][j]=='X') sum[k]++;
-                }                             
-    }
+    for(int j=x;j<=y;j++) if(i==x||i==y||j==x||j==y)  if(arr[i][j]=='X') sum[k]++;
   }
-  x++;
-  y--;
+            x++;y--;
 }
  int total=0;
  for(int it=1;it<=5;it++)
