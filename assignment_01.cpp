@@ -1,42 +1,39 @@
-#include <bits/stdc++.h>
+#include<bits/stdc++.h>
+#define int long long
+#define Not_Exist string::npos //x.find(y) find y inside x like x.find(y)==Not_Exist
 using namespace std;
+void solve()
+{
+  multiset<int> ms;//using multiset so that i can get the sorted values automatically.
 
-int main() {
-    priority_queue<int> leftHeap; // max-heap (lower half)
-    priority_queue<int, vector<int>, greater<int>> rightHeap; // min-heap (upper half)
+  while(true)
+   {
+      int x;cin>>x;
 
-    int n;
-    while (cin >> n) {
-        if (n == 0) break; // terminate
+      if(x==0) return;
+      else if(x>0) ms.insert(x);
+      else if(x==-1)
+      {
+         vector<int> v(ms.begin(),ms.end());//copying the multiset to vector so that i can get the median easily.
+         int median=v[(v.size()-1)/2];//finding the median from this part.
+         cout<<median<<" ";
+         ms.erase(ms.find(median));//erasing part of the median from the multiset.
 
-        if (n > 0) {
-            // Insert into one of the heaps
-            if (leftHeap.empty() || n <= leftHeap.top()) {
-                leftHeap.push(n);
-            } else {
-                rightHeap.push(n);
-            }
+      }
+   }
 
-            // Balance heaps: size(left) >= size(right), and differ at most by 1
-            if (leftHeap.size() > rightHeap.size() + 1) {
-                rightHeap.push(leftHeap.top());
-                leftHeap.pop();
-            } else if (rightHeap.size() > leftHeap.size()) {
-                leftHeap.push(rightHeap.top());
-                rightHeap.pop();
-            }
-        }
-        else if (n == -1) {
-            // Median is always at leftHeap.top()
-            cout << leftHeap.top() << " ";
-            leftHeap.pop();
+}
 
-            // Rebalance if needed
-            if (leftHeap.size() < rightHeap.size()) {
-                leftHeap.push(rightHeap.top());
-                rightHeap.pop();
-            }
-        }
-    }
+int32_t main()
+{
+     ios_base::sync_with_stdio(0);
+     cin.tie(0);
+     int t=1;
+     while(t--)
+     {
+        solve();
+     }
+
+
     return 0;
 }
