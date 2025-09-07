@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#define endl '\n'
 #define int long long
 #define Not_Exist string::npos //x.find(y) find y inside x like x.find(y)==Not_Exist
 using namespace std;
