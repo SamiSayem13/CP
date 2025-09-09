@@ -9,50 +9,26 @@ void solve()
   int sum=0;
   int ovens,operations;cin>>ovens>>operations;
   vector<int>arr(ovens);for(auto &it:arr) cin>>it;
-  sort(arr.begin(),arr.end());
-
-   if(ovens==1) cout<<arr[0]*operations<<endl;
-   else
+  sort(arr.rbegin(),arr.rend());
+  
+  int iterations=operations;
+  if(ovens==1)
+  {
+   cout<<operations*arr[0]<<endl;
+   return;
+  }
+  
+  for(int i=0;i<ovens;i++)
+  {
+   if(iterations==0)
    {
-         if(operations==ovens){
-               int it=1;
-               for(int i=0;i<ovens;i++)
-               {
-                sum+=(arr[i]*it);
-                it++;
-               }
-               cout<<sum<<endl;
-               return;
-         }
-
-         if(operations>ovens){
-               int it=2;
-               for(int i=0;i<ovens;i++)
-               {
-                if(i!=ovens-1)sum+=(arr[i]*it);
-                else sum+=(arr[i]*(it-1));
-                it++;
-               }
-               int ex=abs(operations-ovens);
-               sum+=arr[ovens-1]*ex;
-               operations-=ex;               
-               cout<<sum<<endl;
-               return;
-         }
-         
-
-         if(operations<ovens){
-            int iteration=1;
-            for(int i=operations-1;i<ovens;i++)
-            {
-              sum+=arr[i]*(iteration);
-              iteration++;
-            }
-            cout<<sum<<endl;
-            return;
-         }
-
+      break;
    }
+   sum+=arr[i]*iterations;
+   iterations--;
+  }
+  cout<<sum<<endl;
+
 
 
 }
