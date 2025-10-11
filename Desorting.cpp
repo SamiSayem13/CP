@@ -6,18 +6,26 @@ using namespace std;
 void solve()
 {
    int n;cin>>n;
+   int a,b;
    vector<int> arr(n);
    for(auto &it:arr) cin>>it;
 
       if(!is_sorted(arr.begin(),arr.end())) cout<<0<<endl;
       else
-      {
-           vector<int>arr1;
-           arr1.push_back(-1);
-           arr1.insert(arr1.end(),arr.begin(),arr.end());
+      {  
+         int diff=1e9;
+         for(int i=1;i<n;i++)
+            {
+              int ch=abs(arr[i-1]-arr[i]);
+              if(ch<diff)
+              {
+               diff=ch;
+               a=arr[i-1];
+               b=arr[i];
+              }
+            }
 
-           for(auto it:arr1) cout<<it<<" ";
-           cout<<endl;
+            cout<<(abs(a-b)/2)+1<<endl;
       }
 
 
