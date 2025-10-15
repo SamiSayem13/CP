@@ -5,20 +5,23 @@
 using namespace std;
 void solve()
 {
+   int n,k;cin>>n>>k;
 
-   int n,mt;cin>>n>>mt;
-   vector<int>a(n,0),b(n,0);
-
-   for(int i=0;i<n;i++)
-   {
-      cin>>a[i]>>b[i];
-   }
+   vector<int> arr(n);
+   vector<int> freq(n+1);
 
    for(int i=0;i<n;i++)
    {
-      cout<<a[i]<<" "<<b[i]<<endl;
+      cin>>arr[i];
+      freq[arr[i]]++;
+   }
+   int cntn=0, cntk=freq[k];
+   for(int i=0;i<k;i++)
+   {
+      if(freq[i]==0) cntn++;
    }
 
+   cout<<max(cntn,cntk)<<endl;
 
 }
 

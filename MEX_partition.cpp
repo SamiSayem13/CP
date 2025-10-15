@@ -5,21 +5,22 @@
 using namespace std;
 void solve()
 {
+  int n;cin>>n;
+  vector<int>arr(n);
+  set<int>s;
+  int cnt=0;
+  for(int i=0;i<n;i++)
+  {
+   int x;cin>>x;
+   s.insert(x);
+  }
 
-   int n,mt;cin>>n>>mt;
-   vector<int>a(n,0),b(n,0);
+  for(auto it:s)
+  {
+   if(it==cnt) cnt++;
+  }
 
-   for(int i=0;i<n;i++)
-   {
-      cin>>a[i]>>b[i];
-   }
-
-   for(int i=0;i<n;i++)
-   {
-      cout<<a[i]<<" "<<b[i]<<endl;
-   }
-
-
+  cout<<cnt<<endl;
 }
 
 int32_t main()
