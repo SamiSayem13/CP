@@ -4,15 +4,12 @@
 #define Not_Exist string::npos //x.find(y) find y inside x
 #define bin2dec(s) bitset<32>(s).to_ulong()
 using namespace std;
-
 void solve()
 {
-    int n,m,k;cin>>n>>m>>k;
-    if(m==1) {cout<<"NO"<<endl;return;}
-    int f=0;
-    int porbe=(n%m==0)?(n/m):(n/m)+1;
-    if(n-porbe>k) cout<<"YES"<<endl;
-    else cout<<"NO"<<endl;
+
+    string t;cin>>t;
+    cout<<bin2dec(t)<<endl;
+
      
 }
 

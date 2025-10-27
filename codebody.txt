@@ -1,13 +1,13 @@
 #include<bits/stdc++.h>
 #define endl '\n'
 #define int long long
-#define Not_Exist string::npos //x.find(y) find y inside x like x.find(y)==Not_Exist
+#define Not_Exist string::npos //x.find(y) find y inside x
+#define bin2dec(s) bitset<32>(s).to_ulong()
 using namespace std;
 void solve()
 {
 
-
-
+     
 
 
 
@@ -18,10 +18,7 @@ int32_t main()
      ios_base::sync_with_stdio(0);
      cin.tie(0);
      int t;cin>>t;
-     while(t--)
-     {
-        solve();
-     }
+     while(t--) solve();
 
 
     return 0;
