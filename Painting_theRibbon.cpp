@@ -6,8 +6,16 @@ using namespace std;
 void solve()
 {
     int n,m,k;cin>>n>>m>>k;
-
+    if(m==1) {cout<<"NO"<<endl;return;}
+    int f=0;
+    int porbe=(n%m==0)?(n/m):(n/m)+1;
+    if(n-porbe>k) cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
+     
     
+
+
+
 
 }
 
