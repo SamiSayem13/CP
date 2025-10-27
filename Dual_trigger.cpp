@@ -3,14 +3,15 @@
 #define int long long
 #define Not_Exist string::npos //x.find(y) find y inside x
 #define bin2dec(s) bitset<32>(s).to_ulong()
+#define dec2bin(n) bitset<32>(n).to_string().substr(bitset<32>(n).to_string().find('1')) // Note if 0 then give error
 using namespace std;
 void solve()
 {
 
-    string t;cin>>t;
-    cout<<bin2dec(t)<<endl;
 
-     
+
+
+
 }
 
 int32_t main()
