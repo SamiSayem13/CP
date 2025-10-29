@@ -8,8 +8,36 @@ using namespace std;
 void solve()
 {
 
+  int n;cin>>n;
+  string s;cin>>s;
+  int fst=n;
+  int lst=-1;
+  int cnt=0;
+  for(int i=0;i<n;i++)
+  {
+   if(s[i]=='1')
+   {
+    cnt++;
+    fst=min(fst,i);
+    lst=max(lst,i);
+   }
+  }
 
+  //cout<<fst<<" "<<lst<<endl;
 
+  if(cnt==0) cout<<"YES"<<endl;
+  else if(cnt==1) cout<<"NO"<<endl;
+  else
+  {
+    //int icnt=0;
+    // for(int i=fst+1;i<=lst-1;i++)
+    // {
+    //  if(s[i]=='1') cnt++;
+    // }
+
+     if(cnt%2==0&&abs(fst-lst)!=1) cout<<"YES"<<endl;
+     else cout<<"NO"<<endl;
+  }
 
 
 }

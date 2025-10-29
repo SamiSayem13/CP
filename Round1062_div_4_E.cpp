@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+#define endl '\n'
+#define int long long
+#define Not_Exist string::npos //x.find(y) find y inside x
+#define bin2dec(s) bitset<32>(s).to_ulong()
+#define dec2bin(n) bitset<32>(n).to_string().substr(bitset<32>(n).to_string().find('1')) // Note if 0 then give error
+using namespace std;
+// const int N=1e7+9;
+// bool f[N];
+void solve()
+{
+     int friends,number_teleports,teleport_range;
+     cin>>friends>>number_teleports>>teleport_range;
+
+}
+
+int32_t main()
+{
+     ios_base::sync_with_stdio(0);
+     cin.tie(0);
+     int t;cin>>t;
+     while(t--) solve();
+
+
+    return 0;
+}
